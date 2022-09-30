@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CoursesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('backend/dashboard.index');
-})->middleware(['auth'])->name('dashboard');
+Route::prefix('dashboard')->middleware('auth')->group(function () {
+    Route::get('/', function () {
+        return view('backend.dashboard.index');
+    })->name('dashboard');
+
+    Route::resource('course', CoursesController::class);
+});
 
 require __DIR__.'/auth.php';

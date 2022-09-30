@@ -1,14 +1,14 @@
 <!-- ========== App Menu ========== -->
 <div class="app-menu navbar-menu">
     <!-- LOGO -->
-    <div class="navbar-brand-box px-5">
+    <div class="navbar-brand-box">
         <!-- Dark Logo-->
         <a href="index-2.html" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="{{asset('backend/assets/images/logo-sm.png')}}" alt="" height="22">
+                <img src="/assets/images/logo-sm.png" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="{{asset('backend/assets/images/logo-dark.png')}}" alt="" height="17">
+                <img src="/assets/images/logo-dark.png" alt="" height="17">
             </span>
         </a>
         <!-- Light Logo-->
@@ -34,12 +34,15 @@
             <ul class="navbar-nav" id="navbar-nav">
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse"
-                        role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                        <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Dashboards</span>
+                    <a class="nav-link menu-link {{ request()->routeIs('dashboard.*') ? 'active' : '' }}"  href="{{ route('dashboard') }}">
+                        <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Dashboard</span>
                     </a>
-
-                </li> <!-- end Dashboard Menu -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('course.*') ? 'active' : '' }}" href="{{ route('course.index') }}">
+                        <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Courses</span>
+                    </a>
+                </li>
 
 
             </ul>

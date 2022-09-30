@@ -26,6 +26,14 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->timestamps();
         });
+
+        // courses_users
+        Schema::create('courses_users', function (Blueprint $table) {
+            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('user_id');
+
+        });
+
     }
 
     /**
