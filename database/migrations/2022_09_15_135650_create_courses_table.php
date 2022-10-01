@@ -23,14 +23,14 @@ return new class extends Migration
             $table->longText('audience')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->foreignId('category_id');
-            $table->foreignId('user_id');
+            $table->foreignId('teacher_id');
             $table->timestamps();
         });
 
         // courses_users
         Schema::create('courses_users', function (Blueprint $table) {
             $table->unsignedBigInteger('course_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('student_id');
 
         });
 

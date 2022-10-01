@@ -14,7 +14,8 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        return view('backend.course.index');
+        $courses = Courses::get();
+        return view('backend.course.index', compact('courses'));
     }
 
     /**
