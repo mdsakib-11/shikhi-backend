@@ -36,7 +36,7 @@ class AuthController extends Controller
         } catch (\Throwable $th) {
             return [
                 'error' => true,
-                'message' => 'Something wrong!'
+                'message' => 'something wrong!'
             ];
         }
     }
