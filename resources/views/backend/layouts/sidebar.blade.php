@@ -40,7 +40,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link menu-link {{ request()->routeIs('course.*') ? 'active' : '' }}" href="{{ route('course.index') }}">
-                        <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Courses</span>
+                        <i class="bx bxs-graduation"></i> <span data-key="t-dashboards">Courses</span>
                     </a>
                 </li>
 
