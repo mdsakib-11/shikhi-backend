@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\LessonsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     })->name('dashboard');
 
     Route::resource('course', CoursesController::class);
+    Route::resource('lessons', LessonsController::class);
 });
 
 require __DIR__.'/auth.php';

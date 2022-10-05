@@ -44,6 +44,12 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('lessons.*') ? 'active' : '' }}" href="{{ route('lessons.index') }}">
+                        <i class="bx bxs-graduation"></i> <span data-key="t-dashboards">Lessons</span>
+                    </a>
+                </li>
+
 
             </ul>
         </div>

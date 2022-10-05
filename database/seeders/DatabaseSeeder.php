@@ -36,5 +36,6 @@ class DatabaseSeeder extends Seeder
         ])->assignRole('SuperAdmin');
 
         \App\Models\Courses::factory(50)->create();
+        \App\Models\Lessons::factory(100)->create();
     }
 }
