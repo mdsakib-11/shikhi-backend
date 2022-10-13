@@ -10,6 +10,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// login route
+// Public Route
 Route::post('login', [AuthController::class, 'login']);
-Route::get('courses', [CoursesController::class, 'courses'])->middleware('auth:api');
+Route::get('courses', [CoursesController::class, 'courses']);
+Route::get('course/{id}', [CoursesController::class, 'singleCourse']);
+// Secure Route
+Route::middleware('auth:api')->group(function () {
+    Route::get('lessons', [CoursesController::class, 'lessons']);
+});
+
