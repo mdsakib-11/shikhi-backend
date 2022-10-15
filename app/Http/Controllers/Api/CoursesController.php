@@ -15,11 +15,11 @@ class CoursesController extends Controller
         'courses' => Courses::get()
     ];
    }
-// Single Coures Get
-   public function singleCourse($id)
+// Single Courses Get
+   public function singleCourse($slug)
    {
     // single coures find process
-    $course = Courses::findOrfail($id);
+    $course = Courses::where('slug', $slug)->get()->first();
     return [
         'error' => false,
         'course' => $course

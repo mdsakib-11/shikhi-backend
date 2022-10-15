@@ -34,8 +34,11 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123'),
             'email_verified_at' => now(),
         ])->assignRole('SuperAdmin');
-
+        // Course
         \App\Models\Courses::factory(50)->create();
+        //  Lessons
         \App\Models\Lessons::factory(100)->create();
+        // Category
+        \App\Models\Category::factory(30)->create();
     }
 }
