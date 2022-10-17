@@ -16,6 +16,12 @@ class User extends Authenticatable
 // Define a guarded variable
     protected $guerded = ['id', 'created_at', 'updated_at'];
 
+
+    public function courses()
+    {
+        return $this->belongsToMany(Courses::class, 'courses_users', 'course_id', 'student_id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -10,7 +10,7 @@ class Courses extends Model
     use HasFactory;
     // Define A Guarded Variable
     protected $guarded = ['id', 'created_at', 'updated_at'];
-    protected $with = ['teacher', 'lessons', 'category'];
+    protected $with = ['teacher', 'lessons', 'category', 'student'];
 
      // Course With Relation Category Model (One to One)
      public function category()
@@ -26,6 +26,11 @@ class Courses extends Model
     public function lessons()
     {
         return $this->hasMany(Lessons::class, 'course_id', 'id');
+    }
+    // Course With Relation User Model Courses_User Table (Many to Many)
+    public function student()
+    {
+        return $this->belongsToMany(User::class, 'courses_users', 'course_id', 'student_id');
     }
 
 }
